@@ -1,9 +1,12 @@
 import express from 'express';
+import cors from 'cors'; //rodar recomendaçao typescript
 import path from 'path';
 import routes from './routes'
 
 const app = express();
 
+
+app.use(cors());//está permitindo todas -- {origin: 'www.'}
 app.use(express.json()); //adicionar plugin para o express reconhecer JSON no request
 
 app.use(routes);
